@@ -1,3 +1,4 @@
+<?php //test_view.php?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,6 @@
     <title>Title</title>
 </head>
 <body>
-<b>test</b>
+<b>Hello Kukaro!</b>
 </body>
 </html>
