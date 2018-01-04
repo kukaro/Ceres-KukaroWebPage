@@ -24,7 +24,15 @@ class FormTest extends CI_Controller
     {
         if ($this->input->post('submit') == true) {
             $data['value'] = $this->input->post('str');
-            echo $data['value'];
+            $data['method'] = 'post';
+            $this->load->view('form_receive_view',$data);
+            echo $data['value'].$data['method'];
+        }
+        else if($this->input->get('submit') == true){
+            $data['value'] = $this->input->get('str');
+            $data['method'] = 'get';
+            $this->load->view('form_receive_view',$data);
+            echo $data['value'].$data['method'];
         }
     }
 }
