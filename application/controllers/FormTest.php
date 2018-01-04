@@ -18,7 +18,7 @@ class FormTest extends CI_Controller
     public function index()
     {
         $this->load->view('form_test_view');
-        $this->getvalue();
+        //$this->getvalue();
     }
     function getvalue()
     {
