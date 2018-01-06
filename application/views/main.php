@@ -27,15 +27,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">로고 </a>
+            <a class="navbar-brand" href="#"><img src="<?= $image['custom-ceres'] ?>"
+                                                  style="width: auto; max-height: 100%;"> </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">메뉴1 </a></li>
-                <li><a href="#">메뉴2</a></li>
-                <li><a href="#">메뉴3</a></li>
+                <li onmouseover="mouse_over(0)" onmouseleave="mouse_leave(0)"><a href="#">사이트 소개</a></li>
+                <li onmouseover="mouse_over(1)" onmouseleave="mouse_leave(1)"><a href="#">파일 관리</a></li>
+                <li onmouseover="mouse_over(2)" onmouseleave="mouse_leave(2)"><a href="#">코드 관리</a></li>
                 <!-- <li class="dropdown">
                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">드롭다운 <b class="caret"></b></a>
                    <ul class="dropdown-menu">
@@ -55,7 +56,16 @@
         </div><!-- /.navbar-collapse -->
     </nav>
 </div>
-<script src="<?=$js['jquery']?>"></script>
-<script src="<?=$js['bootstrap']?>"></script>
+<script src="<?= $js['jquery'] ?>"></script>
+<script src="<?= $js['bootstrap'] ?>"></script>
+<script>
+    function mouse_over(num) {
+        $('li:eq(' + num + ')').addClass('active')
+    }
+
+    function mouse_leave(num) {
+        $('li:eq(' + num + ')').removeClass('active')
+    }
+</script>
 </body>
 </html>

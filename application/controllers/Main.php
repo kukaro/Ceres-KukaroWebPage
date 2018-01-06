@@ -17,8 +17,10 @@ class Main extends CI_Controller
         $js = array("jquery" => base_url("application/views/public/jquery/dist/jquery.min.js"),
             "bootstrap" => base_url("application/views/public/bootstrap/dist/js/bootstrap.min.js")
         );
+        $image = array("custom-ceres" => base_url("application/views/public/custom/dist/image/ceres_origin.bmp"));
         $data = array("css" => $css,
-            "js" => $js);
+            "js" => $js,
+            "image" => $image);
 
         $this->load->view('main', $data);
     }
