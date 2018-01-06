@@ -1,0 +1,25 @@
+{
+  "name": "Ceres",
+  "homepage": "https://github.com/kukaro/Ceres-KukaroWebPage",
+  "authors": [
+    "DESKTOP-JS8DOEJ\\jiharu <justkukaro@naver.com>"
+  ],
+  "description": "Kukaro's web",
+  "main": "index.php",
+  "keywords": [
+    "Ceres"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "application/views/public"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
