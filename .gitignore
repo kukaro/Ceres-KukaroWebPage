@@ -33,3 +33,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 ## bower files
 application/views/public/*
 !application/views/public/custom
+
+## batch file
+file
+code
