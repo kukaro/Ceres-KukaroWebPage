@@ -20,4 +20,4 @@ else
     sudo npm install -g bower
 fi
 
-#bower install to local directory
+#bower install to ceres directory
