@@ -5,7 +5,7 @@
 sudo mkdir -p file/user/admin
 sudo mkdir -p code
 
-#install npm
+#install package npm,bower
 npmIxist=`which npm | wc -c`
 bowerIxist=`which bower | wc -c`
 if [ $npmIxist -gt 0 ];then
@@ -19,3 +19,5 @@ else
     echo "bower not ixist"
     sudo npm install -g bower
 fi
+
+#bower install to local directory
