@@ -21,3 +21,8 @@ else
 fi
 
 #bower install to ceres directory
+sudo chmod 777 ./*
+sudo chmod 777 .
+sudo chmod 777 ./application/views/public
+bower install
+mv ../Ceres-KukaroWebPage ../CI
