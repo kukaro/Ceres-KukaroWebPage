@@ -27,7 +27,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="<?= $image['custom-ceres'] ?>"
+            <a class="navbar-brand" href="/CI/index.php/main"><img src="<?= $image['custom-ceres'] ?>"
                                                   style="width: auto; max-height: 100%;"> </a>
         </div>
 
