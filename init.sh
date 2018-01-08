@@ -28,8 +28,16 @@ bower install
 sudo mv ../Ceres-KukaroWebPage ../CI
 
 #install mariadb
-sudo wget https://downloads.mariadb.com/MariaDB/mariadb-10.2.12/repo/ubuntu/mariadb-10.2.12-ubuntu-xenial-amd64-debs.tar
-sudo tar -xf mariadb-10.2.12-ubuntu-xenial-amd64-debs.tar mariadb-10.2.12-ubuntu-xenial-amd64-debs
-sudo mv mariadb-10.2.12-ubuntu-xenial-amd64-debs mariadb
-sudo rm -rf mariadb-10.2.12-ubuntu-xenial-amd64-debs.tar
-sudo chmod 777 mariadb
+mariadbIxist=`which mysql | wc -c`
+if [ $mariadbIxist -gt 0 ];then
+    echo "mariadb ixist"
+else
+    echo "mariadb not ixist"
+    sudo apt-get update
+    sudo apt-get install mariadb-server mariadb-client
+    sudo mysql_secure_installation
+fi
+echo -e "Enter mariadb's password : \c "
+read -s pass
+echo ""
+sudo mysql -uroot -p$pass
