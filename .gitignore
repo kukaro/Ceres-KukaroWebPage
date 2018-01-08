@@ -38,3 +38,6 @@ application/views/public/*
 file
 code
 test.sh
+
+## mariadb file
+mariadb
