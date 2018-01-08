@@ -18,7 +18,7 @@ class Main extends CI_Controller
             "bootstrap" => "application/views/public/bootstrap/dist/js/bootstrap.min.js",
             "custom" => "application/views/public/custom/dist/js/main.js"
         );
-        $image = array("custom-ceres" => "application/views/public/custom/dist/image/ceres_origin.bmp");
+        $image = array("custom-ceres" => "application/views/public/custom/dist/image/ceres_origin.gif");
         $data = array("css" => $css,
             "js" => $js,
             "image" => $image);

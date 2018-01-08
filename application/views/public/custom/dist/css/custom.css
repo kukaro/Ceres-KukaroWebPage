@@ -1,8 +1,24 @@
 @font-face {
     font-family: 'NanumGothic';
-    src:url("/CI/application/views/public/custom/dist/font/NanumGothic.eot");
-    src:local(""), url("/CI/application/views/public/custom/dist/font/NanumGothic.woff") format("woff");
+    src: url("/CI/application/views/public/custom/dist/font/NanumGothic.eot");
+    src: local(""), url("/CI/application/views/public/custom/dist/font/NanumGothic.woff") format("woff");
 }
-body{
+
+body {
     font-family: "NanumGothic";
+}
+
+.inverse-dropdown {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.inverse-dropdown > li > a {
+    color: #9d9d9d;
+}
+
+.inverse-dropdown > li > a:hover,
+.inverse-dropdown > li > a:focus {
+    color: #fff;
+    background-color: transparent;
 }

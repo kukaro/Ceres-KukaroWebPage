@@ -35,9 +35,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li onmouseover="mouse_over(0)" onmouseleave="mouse_leave(0)"><a href="#">사이트 소개</a></li>
-                    <li onmouseover="mouse_over(1)" onmouseleave="mouse_leave(1)"><a href="#">파일 관리</a></li>
-                    <li onmouseover="mouse_over(2)" onmouseleave="mouse_leave(2)"><a href="#">코드 관리</a></li>
+                    <li class="dropdown" onmouseover="mouse_over(0)" onmouseleave="mouse_leave(0)"><a
+                                class="dropdown-toggle" data-toggle="dropdown" href="#">사이트 소개<b class="caret"></b></a>
+                        <ul class="dropdown-menu inverse-dropdown">
+                            <li><a href="#">서브메뉴 1</a></li>
+                            <li><a href="#">서브메뉴 2</a></li>
+                            <li><a href="#">서브메뉴 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" onmouseover="mouse_over(1)" onmouseleave="mouse_leave(1)"><a
+                                class="dropdown-toggle" data-toggle="dropdown" href="#">파일 관리<b class="caret"></b></a>
+                    </li>
+                    <li class="dropdown" onmouseover="mouse_over(2)" onmouseleave="mouse_leave(2)"><a
+                                class="dropdown-toggle" data-toggle="dropdown" href="#">코드 관리<b class="caret"></b></a>
+                    </li>
                     <!-- <li class="dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">드롭다운 <b class="caret"></b></a>
                        <ul class="dropdown-menu">
