@@ -37,7 +37,4 @@ else
     sudo apt-get install mariadb-server mariadb-client
     sudo mysql_secure_installation
 fi
-echo -e "Enter mariadb's password : \c "
-read -s pass
-echo ""
-sudo mysql -uroot -p$pass
+sudo mysql -uroot -p < application/docs/sql/createDb.sql
