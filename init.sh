@@ -32,3 +32,4 @@ sudo wget https://downloads.mariadb.com/MariaDB/mariadb-10.2.12/repo/ubuntu/mari
 sudo tar -xf mariadb-10.2.12-ubuntu-xenial-amd64-debs.tar mariadb-10.2.12-ubuntu-xenial-amd64-debs
 sudo mv mariadb-10.2.12-ubuntu-xenial-amd64-debs mariadb
 sudo rm -rf mariadb-10.2.12-ubuntu-xenial-amd64-debs.tar
+sudo chmod 777 mariadb
