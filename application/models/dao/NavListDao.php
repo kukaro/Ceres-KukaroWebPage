@@ -22,7 +22,7 @@ class NavListDao
 
     public function read($externalName)
     {
-        $result = $this->db->query("select * from nav_list WHERE external_name=$externalName")->result_array();
+        $result = $this->db->query("select * from nav_list WHERE external_name='$externalName'")->result_array();
         return $result;
     }
 }
