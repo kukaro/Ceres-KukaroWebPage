@@ -37,8 +37,11 @@ else
     sudo apt-get install mariadb-server mariadb-client
     sudo mysql_secure_installation
 fi
+sudo chmod 777 ./application/docs/sql/*
 echo "Make database in mariadb"
 sudo mysql -uroot -p < application/docs/sql/createDb.sql
 # my.cnf's character-set setting to utf-8
 echo "Make table in mariadb"
 sudo mysql -uroot -p < application/docs/sql/createTable.sql
+echo "Make row in mariadb"
+sudo mysql -uroot -p < application/docs/sql/insertInitRow.sql
