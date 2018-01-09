@@ -22,6 +22,5 @@ class DatabaseConnection extends CI_Controller
         foreach ($result as $item) {
             echo $item['name'].'<br>';
         }
-
     }
 }
