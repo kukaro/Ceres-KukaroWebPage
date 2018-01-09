@@ -59,6 +59,5 @@
 <script src="<?= $js['jquery'] ?>"></script>
 <script src="<?= $js['bootstrap'] ?>"></script>
 <script src="<?= $js['custom'] ?>"></script>
-<?= $navList[0]['external_name'] ?>
 </body>
 </html>

@@ -39,6 +39,19 @@ class NavListModel extends CI_Model
         $result = array_merge($resultNull, $resultOut);
         return $result;
     }
+    public function readLoginState()
+    {
+        $this->db->order_by("internal_name", "asc");
+        $where = array('show_state' => null);
+        $query = $this->db->get_where('nav_list', $where);
+        $resultNull = $query->result_array();
+        $where = array('show_state' => 'in');
+        $query = $this->db->get_where('nav_list', $where);
+        $resultOut = $query->result_array();
+        $result = array_merge($resultNull, $resultOut);
+        return $result;
+    }
+
 
     public function readAll()
     {

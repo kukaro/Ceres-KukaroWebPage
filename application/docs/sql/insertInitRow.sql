@@ -1,4 +1,5 @@
 use mydb;
+delete from nav_list;
 insert into nav_list values('site introduce','사이트소개',true,'root',null);
 insert into nav_list values('file manage','파일 관리',true,'root',null);
 insert into nav_list values('code manage','코드 관리',true,'root',null);
