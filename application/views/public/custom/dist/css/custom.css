@@ -6,6 +6,7 @@
 
 body {
     font-family: "NanumGothic";
+    padding-top: 70px;
 }
 
 .inverse-dropdown {
@@ -22,6 +23,7 @@ body {
     color: #fff;
     background-color: transparent;
 }
-.dropdown{
+
+.dropdown {
     font-size: 150%;
 }
