@@ -7,12 +7,14 @@ class Main extends CI_Controller
         parent::__construct();
         $this->load->helper('form');
         $this->load->helper('url');
+        $this->load->database();
+        $this->load->model('NavListModel', '', true);
     }
 
     public function index()
     {
         $css = array("bootstrap" => "application/views/public/bootstrap/dist/css/bootstrap.min.css",
-            "custom" =>"application/views/public/custom/dist/css/custom.css"
+            "custom" => "application/views/public/custom/dist/css/custom.css"
         );
         $js = array("jquery" => "application/views/public/jquery/dist/jquery.min.js",
             "bootstrap" => "application/views/public/bootstrap/dist/js/bootstrap.min.js",
@@ -21,8 +23,9 @@ class Main extends CI_Controller
         $image = array("custom-ceres" => "application/views/public/custom/dist/image/ceres_origin.gif");
         $data = array("css" => $css,
             "js" => $js,
-            "image" => $image);
-
+            "image" => $image,
+            "navList" => $this->NavListModel->readAll()
+        );
         $this->load->view('main', $data);
     }
 }

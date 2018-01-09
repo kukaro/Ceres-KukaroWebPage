@@ -25,4 +25,10 @@ class NavListModel extends CI_Model
         $result = $query->result_array();
         return $result;
     }
+
+    public function readAll(){
+        $query = $this->db->get('nav_list');
+        $result = $query->result_array();
+        return $result;
+    }
 }
