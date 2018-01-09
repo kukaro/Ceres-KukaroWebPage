@@ -15,10 +15,7 @@ class DtoTest extends CI_Controller
 
     public function index()
     {
-        $result = $this->db->query("select * from nav_list")->result_array();
-        foreach ($result as $item) {
-            echo $item['external_name'];
-        }
-        echo "DTO Test";
+        $this->load->model('NavListModel','',true);
+        $this->NavListModel->read();
     }
 }
