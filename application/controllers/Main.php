@@ -24,7 +24,7 @@ class Main extends CI_Controller
         $data = array("css" => $css,
             "js" => $js,
             "image" => $image,
-            "navList" => $this->NavListModel->readAll()
+            "navList" => $this->NavListModel->readLogoutState()
         );
         $this->load->view('main', $data);
     }
