@@ -42,6 +42,16 @@
                                href="#"><?= $navList[$i]['internal_name'] ?>
                                 <b class="caret"></b>
                             </a>
+                            <script>
+                            </script>
+                            <? if (count($navSubList[$navList[$i]['external_name']]) != 0): ?>
+                                <ul class="dropdown-menu inverse-dropdown">
+                                    <? foreach ($navSubList[$navList[$i]['external_name']] as $value): ?>
+                                        <li><a href="#"><?= $value['internal_name'] ?></a></li>
+                                    <? endforeach; ?>
+                                </ul>
+                            <? endif; ?>
+
                         </li>
                     <? endfor; ?>
                 </ul>

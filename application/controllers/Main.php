@@ -9,10 +9,16 @@ class Main extends CI_Controller
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('NavListModel', '', true);
+        $this->load->model('NavSubListModel', '', true);
     }
 
     public function index()
     {
+        $navList = $this->NavListModel->readLogoutState();
+        $navSubList = array();
+        foreach ($navList as $value){
+            $navSubList[$value['external_name']]=$this->NavSubListModel->readAll($value['external_name']);
+        };
         $css = array("bootstrap" => "application/views/public/bootstrap/dist/css/bootstrap.min.css",
             "custom" => "application/views/public/custom/dist/css/custom.css"
         );
@@ -24,7 +30,8 @@ class Main extends CI_Controller
         $data = array("css" => $css,
             "js" => $js,
             "image" => $image,
-            "navList" => $this->NavListModel->readLogoutState()
+            "navList" => $navList,
+            "navSubList" => $navSubList
         );
         $this->load->view('main', $data);
     }
