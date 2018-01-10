@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="<?= $css['bootstrap'] ?>" type="text/css">
     <!-- Custom -->
     <link rel="stylesheet" href="<?= $css['custom'] ?>" type="text/css">
-
 </head>
 <body>
 <div class="container">
@@ -42,16 +41,19 @@
                                href="#"><?= $navList[$i]['internal_name'] ?>
                                 <b class="caret"></b>
                             </a>
-                            <script>
-                            </script>
                             <? if (count($navSubList[$navList[$i]['external_name']]) != 0): ?>
                                 <ul class="dropdown-menu inverse-dropdown">
                                     <? foreach ($navSubList[$navList[$i]['external_name']] as $value): ?>
-                                        <li><a href="#"><?= $value['internal_name'] ?></a></li>
+                                        <li class="dropdown-submenu"><a class="dropdown-submenu-toggle" href="#"><?= $value['internal_name'] ?></a>
+                                            <ul class="dropdown-menu inverse-dropdown">
+                                                <li><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                            </ul>
+                                        </li>
                                     <? endforeach; ?>
                                 </ul>
                             <? endif; ?>
-
                         </li>
                     <? endfor; ?>
                 </ul>
