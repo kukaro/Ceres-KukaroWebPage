@@ -28,8 +28,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <? if (count($navSubList[$navList[$i]['external_name']]) != 0): ?>
                             <ul class="dropdown-menu inverse-dropdown">
                                 <? foreach ($navSubList[$navList[$i]['external_name']] as $value): ?>
+                                    <script>
+                                        console.log('/<?=$navList[$i]['owner']?>/<?=str_replace(' ','-',$navList[$i]['external_name'])?>/<?=$value['internal_name']?>');
+                                    </script>
                                     <li class="dropdown-submenu"><a class="dropdown-submenu-toggle"
-                                                                    href="#"><?= $value['internal_name'] ?></a>
+                                                                    href="/CI/<?=$navList[$i]['owner']?>/<?=str_replace(' ','-',$navList[$i]['external_name'])?>/<?=$value['internal_name']?>"><?= $value['internal_name'] ?></a>
                                         <ul class="dropdown-menu inverse-dropdown">
                                             <li><a href="#">1</a></li>
                                             <li><a href="#">2</a></li>
