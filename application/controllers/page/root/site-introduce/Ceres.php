@@ -14,7 +14,12 @@ class Ceres extends CI_Controller
 
     public function index()
     {
-        $body = substr(current_url(), 16);
+        $arr = current_url();
+        $arr = explode('/', $arr);
+        $body = '';
+        for($i =4;$i<count($arr);$i++){
+            $body = $body.'/'.$arr[$i];
+        }
         $className = strtolower(get_class());
         $navList = $this->NavListModel->readLogoutState();
         $navSubList = array();
@@ -34,7 +39,7 @@ class Ceres extends CI_Controller
             "image" => $image,
             "navList" => $navList,
             "navSubList" => $navSubList,
-            "body" => 'page/' . $body . '/' . $className
+            "body" => 'page' . $body . '/' . $className
         );
         $this->load->view('main', $data);
     }
