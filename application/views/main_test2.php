@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="container">
     <? include 'nav.php' ?>
-    <? include $body . '.php' ?>
+    <? include 'home.php' ?>
 </div>
 
 <script src="<?= $js['jquery'] ?>"></script>

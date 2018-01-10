@@ -1,6 +1,6 @@
 <?php //Test.php
 
-class Main extends CI_Controller
+class Ceres extends CI_Controller
 {
     public function __construct()
     {
@@ -14,10 +14,12 @@ class Main extends CI_Controller
 
     public function index()
     {
+        $body = substr(current_url(), 16);
+        $className = strtolower(get_class());
         $navList = $this->NavListModel->readLogoutState();
         $navSubList = array();
-        foreach ($navList as $value){
-            $navSubList[$value['external_name']]=$this->NavSubListModel->readAll($value['external_name']);
+        foreach ($navList as $value) {
+            $navSubList[$value['external_name']] = $this->NavSubListModel->readAll($value['external_name']);
         };
         $css = array("bootstrap" => "/CI/application/views/public/bootstrap/dist/css/bootstrap.min.css",
             "custom" => "/CI/application/views/public/custom/dist/css/custom.css"
@@ -32,7 +34,7 @@ class Main extends CI_Controller
             "image" => $image,
             "navList" => $navList,
             "navSubList" => $navSubList,
-            "body" => 'home'
+            "body" => 'page/' . $body . '/' . $className
         );
         $this->load->view('main', $data);
     }
