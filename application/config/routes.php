@@ -57,3 +57,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['main'] = 'main';
 $route['dto-test']='testcase/dtotest';
 $route['root/site-introduce/ceres'] = 'page/root/site-introduce/ceres';
+$route['model-insert-test']='testcase/modelinserttest';

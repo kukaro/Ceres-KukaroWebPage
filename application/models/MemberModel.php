@@ -11,18 +11,28 @@ class MemberModel extends CI_Model
     private $id;
     private $pass;
     private $email;
-    private $join_date;
+    private $joinDate;
     private $comment;
     private $gender;
-    private $birth_date;
+    private $birthDate;
 
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function create($id, $pass, $email, $join_date, $comment, $gender, $birth_date)
+    public function create($id, $pass, $email, $joinDate, $comment, $gender, $birthDate)
     {
-
+        $data = array(
+            'id' => $id,
+            'pass' => $pass,
+            'email' => $email,
+            'join_date' => $joinDate,
+            'comment' => $comment,
+            'gender' => $gender,
+            'birth_date' => $birthDate
+        );
+        $query = $this->db->insert('member_ceres', $data);
+        return $query;
     }
 }
