@@ -13,6 +13,7 @@ class NavListModel extends CI_Model
     private $isRoot;
     private $owner;
     private $showState;
+    private $isSingle;
 
     public function __construct()
     {
@@ -25,6 +26,9 @@ class NavListModel extends CI_Model
         $where = array('external_name' => $externalName);
         $query = $this->db->get_where('nav_list', $where);
         $result = $query->result_array();
+        for ($i=0; $i<count($result); $i++){
+            $result[$i]['isSingle'] = ($this->NavSubListModel->readJoinNavListModel($result[$i]['external_name'])?1:0);
+        }
         return $result;
     }
 
@@ -53,6 +57,9 @@ class NavListModel extends CI_Model
         $query = $this->db->get_where('nav_list', $where);
         $resultOut = $query->result_array();
         $result = array_merge($resultNull, $resultOut);
+        for ($i=0; $i<count($result); $i++){
+            $result[$i]['isSingle'] = ($this->NavSubListModel->readJoinNavListModel($result[$i]['external_name'])?1:0);
+        }
         return $result;
     }
 
@@ -62,6 +69,9 @@ class NavListModel extends CI_Model
         $this->db->order_by("internal_name", "asc");
         $query = $this->db->get('nav_list');
         $result = $query->result_array();
+        for ($i=0; $i<count($result); $i++){
+            $result[$i]['isSingle'] = ($this->NavSubListModel->readJoinNavListModel($result[$i]['external_name'])?1:0);
+        }
         return $result;
     }
 }
