@@ -19,6 +19,7 @@ else
     echo "bower not ixist"
     sudo npm install -g bower
 fi
+sudo bower install
 
 #bower install to ceres directory
 sudo chmod 777 ./*
