@@ -22,17 +22,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdown" onmouseover="mouse_over(<?= $i ?>)"
                         onmouseleave="mouse_leave(<?= $i ?>)">
                         <a class="dropdown-toggle" data-toggle="dropdown"
-                           href="#"><?= $navList[$i]['internal_name'] ?>
+                           href="/CI/<?= $navList[$i]['owner'] ?>/<?= str_replace(' ', '-', $navList[$i]['external_name']) ?>"><?= $navList[$i]['internal_name'] ?>
                             <b class="caret"></b>
                         </a>
                         <? if (count($navSubList[$navList[$i]['external_name']]) != 0): ?>
                             <ul class="dropdown-menu inverse-dropdown">
                                 <? foreach ($navSubList[$navList[$i]['external_name']] as $value): ?>
                                     <li class="dropdown-submenu"><a class="dropdown-submenu-toggle"
-                                                                    href="/CI/
-                                                                    <?= $navList[$i]['owner'] ?>
-                                                                    /<?= str_replace(' ', '-', $navList[$i]['external_name']) ?>
-                                                                    /<?= $value['internal_name'] ?>"><?= $value['internal_name'] ?></a>
+                                                                    href="/CI/<?= $navList[$i]['owner'] ?>/<?= str_replace(' ', '-', $navList[$i]['external_name']) ?>/<?= $value['internal_name'] ?>"><?= $value['internal_name'] ?></a>
                                         <ul class="dropdown-menu inverse-dropdown">
                                             <li><a href="#">1</a></li>
                                             <li><a href="#">2</a></li>

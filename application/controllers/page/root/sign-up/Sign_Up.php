@@ -1,6 +1,12 @@
-<?php //Test.php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: jiharu
+ * Date: 2018-01-12
+ * Time: 오후 3:58
+ */
 
-class Ceres extends CI_Controller
+class Sign_Up extends CI_Controller
 {
     public function __construct()
     {
@@ -11,14 +17,13 @@ class Ceres extends CI_Controller
         $this->load->model('NavListModel', '', true);
         $this->load->model('NavSubListModel', '', true);
     }
-
     public function index()
     {
         $arr = current_url();
         $arr = explode('/', $arr);
         $body = '';
-        for($i =4;$i<count($arr);$i++){
-            $body = $body.'/'.$arr[$i];
+        for ($i = 4; $i < count($arr); $i++) {
+            $body = $body . '/' . $arr[$i];
         }
         $className = strtolower(get_class());
         $navList = $this->NavListModel->readLogoutState();
