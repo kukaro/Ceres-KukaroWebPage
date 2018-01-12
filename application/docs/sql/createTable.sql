@@ -36,10 +36,10 @@ ALTER TABLE log_ceres
 CREATE TABLE IF NOT EXISTS member_ceres (
   id         VARCHAR(30),
   pass       VARCHAR(100)   NOT NULL,
-  email      VARCHAR(50),
+  email      VARCHAR(50)    NOT NULL,
   join_date  DATE           NOT NULL,
   comment    VARCHAR(100) DEFAULT NULL,
-  gender     SET ('m', 'f') NOT NULL,
+  gender     SET ('M', 'F') NOT NULL,
   birth_date DATE           NOT NULL
 );
 
