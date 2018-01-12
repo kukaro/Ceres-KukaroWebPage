@@ -39,9 +39,9 @@ else
 fi
 sudo chmod 777 ./application/docs/sql/*
 echo "Make database in mariadb"
-sudo mysql -uroot -p < application/docs/sql/createDb.sql
+sudo mysql --force -uroot -p < application/docs/sql/createDb.sql
 # my.cnf's character-set setting to utf-8
 echo "Make table in mariadb"
-sudo mysql -uroot -p < application/docs/sql/createTable.sql
+sudo mysql --force -uroot -p < application/docs/sql/createTable.sql
 echo "Make row in mariadb"
-sudo mysql -uroot -p < application/docs/sql/insertInitRow.sql
+sudo mysql --force -uroot -p < application/docs/sql/insertInitRow.sql
