@@ -25,7 +25,14 @@ class NavSubListModel extends CI_Model
     {
         $where = array('main_nav_name' => $mainNavName);
         $this->db->order_by("internal_name", "asc");
-        $query = $this->db->get_where('nav_sub_list',$where);
+        $query = $this->db->get_where('nav_sub_list', $where);
+        $result = $query->result_array();
+        return $result;
+    }
+
+    public function readJoinNavListModel($externalName)
+    {
+        $query = $this->db->query("select b.* from nav_list a inner join nav_sub_list b on a.external_name=b.main_nav_name where b.main_nav_name='$externalName'");
         $result = $query->result_array();
         return $result;
     }

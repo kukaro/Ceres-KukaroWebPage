@@ -21,9 +21,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <? for ($i = 0; $i < count($navList); $i++): ?>
                     <li class="dropdown" onmouseover="mouse_over(<?= $i ?>)"
                         onmouseleave="mouse_leave(<?= $i ?>)">
-                        <a class="dropdown-toggle" data-toggle="dropdown"
+                        <a class="dropdown-toggle" <?= ($navList[$i]['isSingle'] ? 'data-toggle="dropdown"' : '') ?>
                            href="/CI/<?= $navList[$i]['owner'] ?>/<?= str_replace(' ', '-', $navList[$i]['external_name']) ?>"><?= $navList[$i]['internal_name'] ?>
-                            <b class="caret"></b>
+                            <? if ($navList[$i]['isSingle']): ?>
+                                <b class="caret"></b>
+                            <? endif; ?>
                         </a>
                         <? if (count($navSubList[$navList[$i]['external_name']]) != 0): ?>
                             <ul class="dropdown-menu inverse-dropdown">

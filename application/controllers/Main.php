@@ -16,7 +16,7 @@ class Main extends CI_Controller
     {
         $navList = $this->NavListModel->readLogoutState();
         $navSubList = array();
-        foreach ($navList as $value){
+        foreach($navList as $value){
             $navSubList[$value['external_name']]=$this->NavSubListModel->readAll($value['external_name']);
         };
         $css = array("bootstrap" => "/CI/application/views/public/bootstrap/dist/css/bootstrap.min.css",
