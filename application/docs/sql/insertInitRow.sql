@@ -1,12 +1,12 @@
-use mydb;
-delete from nav_list;
-insert into nav_list values('site introduce','사이트소개',true,'root',null);
-insert into nav_list values('file manage','파일 관리',true,'root',null);
-insert into nav_list values('code manage','코드 관리',true,'root',null);
-insert into nav_list values('sign in','로그인',true,'root','out');
-insert into nav_list values('sign up','회원 가입',true,'root','out');
-insert into nav_list values('sign out','로그아웃',true,'root','in');
+USE mydb;
+DELETE FROM nav_list;
+INSERT INTO nav_list VALUES ('site introduce', '사이트소개', TRUE, 'root', NULL);
+INSERT INTO nav_list VALUES ('file manage', '파일 관리', TRUE, 'root', NULL);
+INSERT INTO nav_list VALUES ('code manage', '코드 관리', TRUE, 'root', NULL);
+INSERT INTO nav_list VALUES ('sign in', '로그인', TRUE, 'root', 'out');
+INSERT INTO nav_list VALUES ('sign up', '회원 가입', TRUE, 'root', 'out');
+INSERT INTO nav_list VALUES ('sign out', '로그아웃', TRUE, 'root', 'in');
 
-delete from nav_sub_list;
-insert into nav_sub_list values('ceres','ceres','site introduce');
-insert into nav_sub_list values('owner','owner','site introduce');
+DELETE FROM nav_sub_list;
+INSERT INTO nav_sub_list VALUES ('ceres', 'ceres', 'site introduce');
+INSERT INTO nav_sub_list VALUES ('owner', 'owner', 'site introduce');

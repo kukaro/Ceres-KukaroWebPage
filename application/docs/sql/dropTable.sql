@@ -1,2 +1,4 @@
-drop table nav_sub_list;
-drop table nav_list;
+USE mydb;
+DROP TABLE nav_sub_list;
+DROP TABLE nav_list;
+DROP TABLE log_ceres;

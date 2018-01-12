@@ -1,19 +1,34 @@
-use mydb;
-create table if not exists nav_list(
-    external_name varchar(100),
-    internal_name varchar(100) not null,
-    is_root boolean not null,
-    owner varchar(30) not null,
-    show_state set('in','out') default null
+USE mydb;
+CREATE TABLE IF NOT EXISTS nav_list (
+  external_name VARCHAR(100),
+  internal_name VARCHAR(100) NOT NULL,
+  is_root       BOOLEAN      NOT NULL,
+  owner         VARCHAR(30)  NOT NULL,
+  show_state    SET ('in', 'out') DEFAULT NULL
 );
 
-alter table nav_list add constraint PK_NAV_LIST primary key (external_name);
+ALTER TABLE nav_list
+  ADD CONSTRAINT PK_NAV_LIST PRIMARY KEY (external_name);
 
-create table if not EXISTS nav_sub_list(
-    external_name varchar(100),
-    internal_name varchar(100) not null,
-    main_nav_name varchar(100) not null
+CREATE TABLE IF NOT EXISTS nav_sub_list (
+  external_name VARCHAR(100),
+  internal_name VARCHAR(100) NOT NULL,
+  main_nav_name VARCHAR(100) NOT NULL
 );
 
-alter table nav_sub_list add constraint PK_NAV_SUB_LIST primary key (external_name);
-alter table nav_sub_list add constraint FK_NAVSUBLIST_NAVLIST foreign key nav_sub_list(main_nav_name) references nav_list(external_name) on delete cascade;
+ALTER TABLE nav_sub_list
+  ADD CONSTRAINT PK_NAV_SUB_LIST PRIMARY KEY (external_name);
+ALTER TABLE nav_sub_list
+  ADD CONSTRAINT FK_NAVSUBLIST_NAVLIST FOREIGN KEY nav_sub_list(main_nav_name) REFERENCES nav_list (external_name)
+  ON DELETE CASCADE;
+
+CREATE TABLE IF NOT EXISTS log_ceres (
+  id      VARCHAR(20) DEFAULT NULL,
+  ip      VARCHAR(20),
+  comment VARCHAR(100)                        NOT NULL,
+  type    SET ('enter', 'debug') DEFAULT NULL,
+  work_time date
+);
+
+ALTER TABLE log_ceres
+  ADD CONSTRAINT PK_LOG_CERES PRIMARY KEY (id, ip);
