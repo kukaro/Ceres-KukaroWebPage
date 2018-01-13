@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <input type="date" class="form-control" placeholder="생일" name="signUpBirthDate">
                 </div>
                 <br>
-                <input type="submit" class="btn btn" value="제출">
+                <input type="submit" class="btn btn" value="제출" name="submit">
             </form>
         </div>
     </div>
