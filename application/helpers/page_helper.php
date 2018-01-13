@@ -25,7 +25,12 @@ function pageMainLoad($obj, $className, $curl){
         $body = $body . '/' . $arr[$i];
     }
     $className = strtolower($className);
-    $navList = $obj->NavListModel->readLogoutState();
+    if($obj->session->userdata('isLogin')){
+        $navList = $obj->NavListModel->readLoginState();
+    }
+    else{
+        $navList = $obj->NavListModel->readLogoutState();
+    }
     $navSubList = array();
     foreach ($navList as $value) {
         $navSubList[$value['external_name']] = $obj->NavSubListModel->readAll($value['external_name']);

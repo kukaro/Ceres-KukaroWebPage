@@ -13,11 +13,17 @@ class Main extends CI_Controller
         $this->load->database();
         $this->load->model('NavListModel', '', true);
         $this->load->model('NavSubListModel', '', true);
+        $this->load->library('session');
     }
 
     public function index()
     {
-        $navList = $this->NavListModel->readLogoutState();
+        if($this->session->userdata('isLogin')){
+            $navList = $this->NavListModel->readLoginState();
+        }
+        else{
+            $navList = $this->NavListModel->readLogoutState();
+        }
         $navSubList = array();
         foreach($navList as $value){
             $navSubList[$value['external_name']]=$this->NavSubListModel->readAll($value['external_name']);
