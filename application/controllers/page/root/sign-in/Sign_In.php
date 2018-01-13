@@ -62,6 +62,7 @@ class Sign_In extends CI_Controller
             if(count($result)==1){
                 $isSuccess = true;
                 $this->session->set_userdata($result[0]);
+                $this->session->set_userdata('isLogin',true);
             }
             else{
                 $isSuccess = false;
