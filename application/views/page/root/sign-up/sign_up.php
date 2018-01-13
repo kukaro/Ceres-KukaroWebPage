@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="well">
         <div class="container">
-            <form method="post">
+            <form method="post" action="sign-up/process">
                 <div class="input-group input-sign">
                     <span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>
                     <input type="text" class="form-control" placeholder="아이디">

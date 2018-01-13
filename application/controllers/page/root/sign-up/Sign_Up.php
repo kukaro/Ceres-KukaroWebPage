@@ -48,4 +48,15 @@ class Sign_Up extends CI_Controller
         );
         $this->load->view('main', $data);
     }
+
+    public function process(){
+        //TODO 처리해야함
+        if ($this->input->post() == true) {
+            echo 'post';
+        }
+        else if($this->input->get() == true){
+            echo 'get';
+        }
+        redirect('main');
+    }
 }

@@ -58,4 +58,5 @@ $route['main'] = 'main';
 $route['dto-test']='testcase/dtotest';
 $route['root/site-introduce/ceres'] = 'page/root/site-introduce/Ceres';
 $route['root/sign-up'] = 'page/root/sign-up/Sign_Up';
+$route['root/sign-up/process'] = 'page/root/sign-up/Sign_Up/process';
 $route['model-insert-test']='testcase/modelinserttest';
