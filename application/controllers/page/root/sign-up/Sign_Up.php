@@ -52,10 +52,10 @@ class Sign_Up extends CI_Controller
     public function process(){
         //TODO 처리해야함
         if ($this->input->post() == true) {
-            echo 'post';
+
         }
         else if($this->input->get() == true){
-            echo 'get';
+
         }
         echo("<script>location.href='/CI/main';</script>");
     }
