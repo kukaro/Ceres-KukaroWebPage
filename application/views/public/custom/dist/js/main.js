@@ -7,12 +7,12 @@ function mouse_leave(num) {
 }
 
 function gender_click() {
-    var element = $('input[name=gender]').val();
+    var element = $('input[name=signUpGender]').val();
     if(element != '남자'){
-        $('input[name=gender]').val('남자');
+        $('input[name=signUpGender]').val('남자');
     }
     else{
-        $('input[name=gender]').val('여자');
+        $('input[name=signUpGender]').val('여자');
     }
 }
 

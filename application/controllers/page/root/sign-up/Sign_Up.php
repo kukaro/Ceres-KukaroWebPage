@@ -16,7 +16,9 @@ class Sign_Up extends CI_Controller
         $this->load->database();
         $this->load->model('NavListModel', '', true);
         $this->load->model('NavSubListModel', '', true);
+        $this->load->model('MemberModel', '', true);
     }
+
     public function index()
     {
         $arr = current_url();
@@ -49,12 +51,32 @@ class Sign_Up extends CI_Controller
         $this->load->view('main', $data);
     }
 
-    public function process(){
+    public function process()
+    {
+        $isSuccess = false;
         //TODO 처리해야함
         if ($this->input->post() == true) {
-
-        }
-        else if($this->input->get() == true){
+            $id = $this->input->post('signUpId');
+            $pass = $this->input->post('signUpPass');
+            $passV = $this->input->post('signUpPassV');
+            if ($pass == $passV) {
+                $isSuccess = true;
+            }
+            $email = $this->input->post('signUpEmail');
+            $joinDate = date("Y-m-d H:i:s", time());
+            $gender = $this->input->post('signUpGender');
+            $birthDate = $this->input->post('signUpBirthDate');
+            if (strpos($gender, '남자') !== false) {
+                $gender = 'm';
+            } else if (strpos($gender, '여자') !== false) {
+                $gender = 'f';
+            } else {
+                $isSuccess = false;
+            }
+            if ($isSuccess) {
+                $this->MemberModel->create($id, $pass, $email, $joinDate, null, $gender, $birthDate);
+            }
+        } else if ($this->input->get() == true) {
 
         }
         echo("<script>location.href='/CI/main';</script>");

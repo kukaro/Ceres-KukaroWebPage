@@ -25,11 +25,11 @@ class MemberModel extends CI_Model
     {
         $data = array(
             'id' => $id,
-            'pass' => $pass,
+            'pass' => hash_hmac('sha256', $pass, 'root'),
             'email' => $email,
             'join_date' => $joinDate,
             'comment' => $comment,
-            'gender' => $gender,
+            'gender' => strtoupper($gender),
             'birth_date' => $birthDate
         );
         $query = $this->db->insert('member_ceres', $data);
