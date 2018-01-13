@@ -57,6 +57,6 @@ class Sign_Up extends CI_Controller
         else if($this->input->get() == true){
             echo 'get';
         }
-        redirect('main');
+        redirect('/CI/main');
     }
 }
