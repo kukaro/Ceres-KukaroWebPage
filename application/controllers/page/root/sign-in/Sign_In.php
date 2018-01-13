@@ -17,6 +17,7 @@ class Sign_In extends CI_Controller
         $this->load->model('NavListModel', '', true);
         $this->load->model('NavSubListModel', '', true);
         $this->load->model('MemberModel', '', true);
+        $this->load->library('session');
     }
 
     public function index()
@@ -54,27 +55,16 @@ class Sign_In extends CI_Controller
     public function process()
     {
         $isSuccess = false;
-        //TODO 처리해야함
         if ($this->input->post() == true) {
-            $id = $this->input->post('signUpId');
-            $pass = $this->input->post('signUpPass');
-            $passV = $this->input->post('signUpPassV');
-            if ($pass == $passV) {
+            $id = $this->input->post('signInId');
+            $pass = $this->input->post('signInPass');
+            $result = $this->MemberModel->readOne($id, $pass);
+            if(count($result)==1){
                 $isSuccess = true;
+                $this->session->set_userdata($result[0]);
             }
-            $email = $this->input->post('signUpEmail');
-            $joinDate = date("Y-m-d H:i:s", time());
-            $gender = $this->input->post('signUpGender');
-            $birthDate = $this->input->post('signUpBirthDate');
-            if (strpos($gender, '남자') !== false) {
-                $gender = 'm';
-            } else if (strpos($gender, '여자') !== false) {
-                $gender = 'f';
-            } else {
+            else{
                 $isSuccess = false;
-            }
-            if ($isSuccess) {
-                $this->MemberModel->create($id, $pass, $email, $joinDate, null, $gender, $birthDate);
             }
         } else if ($this->input->get() == true) {
 

@@ -35,4 +35,13 @@ class MemberModel extends CI_Model
         $query = $this->db->insert('member_ceres', $data);
         return $query;
     }
+
+    public function readOne($id, $pass)
+    {
+        $where = array('id' => $id,
+            'pass' => hash_hmac('sha256', $pass, 'root'));
+        $query = $this->db->get_where('member_ceres', $where);
+        $result = $query->result_array();
+        return $result;
+    }
 }
