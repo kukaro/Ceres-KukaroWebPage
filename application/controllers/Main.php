@@ -1,5 +1,8 @@
-<?php //Test.php
-
+<?php //Main.php
+/**
+ * Class Main
+ * 이 클래스는 page_helper를 사용하지 않는 특수한 클래스입니다.
+ */
 class Main extends CI_Controller
 {
     public function __construct()
