@@ -6,6 +6,16 @@ function mouse_leave(num) {
    $('li:eq(' + num + ')').removeClass('active')
 }
 
+function gender_click() {
+    var element = $('input[name=gender]').val();
+    if(element != '남자'){
+        $('input[name=gender]').val('남자');
+    }
+    else{
+        $('input[name=gender]').val('여자');
+    }
+}
+
 $(document).ready(function () {
     var sw;
     $('.dropdown-submenu a.dropdown-submenu-toggle').on("mouseover", function (e) {
