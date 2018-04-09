@@ -18,6 +18,6 @@ RUN a2enmod rewrite
 # Make port 80 available to the world outside
 EXPOSE 80
 
-ADD app /var/www/html/app
+ADD CI /var/www/html/app
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
