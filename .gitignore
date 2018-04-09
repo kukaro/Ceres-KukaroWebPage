@@ -42,3 +42,6 @@ test.sh
 
 ## mariadb file
 mariadb
+
+## phpstorm file
+composer.phar
