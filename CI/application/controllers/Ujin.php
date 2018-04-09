@@ -6,7 +6,7 @@
  * Time: PM 10:29
  */
 
-class Ujin
+class Ujin extends CI_Controller
 {
     public function index()
     {
