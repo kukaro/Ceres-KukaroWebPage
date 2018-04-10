@@ -18,12 +18,15 @@ RUN a2enmod rewrite
 # Make port 80 available to the world outside
 EXPOSE 80
 
+# Import php project
 ADD CI /var/www/html/
+
+# Set configulation
 ADD 000-default.conf /etc/apache2/sites-available/
 ADD apache2.conf /etc/apache2/
 ADD servername.conf /etc/apache2/conf-available/
 
+# Restart apache
 RUN a2enconf servername
-RUN service apache2 restart 
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
