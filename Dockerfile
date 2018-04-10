@@ -19,5 +19,6 @@ RUN a2enmod rewrite
 EXPOSE 80
 
 ADD CI /var/www/html/
+ADD apache2.conf /etc/apache2/
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
