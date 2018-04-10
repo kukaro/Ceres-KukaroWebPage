@@ -19,6 +19,11 @@ RUN a2enmod rewrite
 EXPOSE 80
 
 ADD CI /var/www/html/
+ADD 000-default.conf /etc/apache2/sites-available/
 ADD apache2.conf /etc/apache2/
+ADD servername.conf /etc/apache2/conf-available/
+
+RUN a2enconf servername
+RUN service apache2 restart 
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
