@@ -1,0 +1,10 @@
+docker ps
+-docker에서 현재 작업중인 이미지 실행
+
+docker stop <id입력하는데 최소 2개 입력>
+-docker에서 돌고 있는 이미지 멈춤
+
+docker build -t <app이름> .
+-docker에서 Dockerfile을 실행시키는데 이름이 app이 된다.
+
+docker run -d -p 80:80 

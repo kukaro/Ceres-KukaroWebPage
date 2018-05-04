@@ -45,3 +45,6 @@ mariadb
 
 ## phpstorm file
 composer.phar
+
+## nodejs Files
+node_modules

@@ -1,0 +1,17 @@
+{
+  "name": "Bootstrap",
+  "homepage": "https://github.com/kukaro/Ceres-KukaroWebPage",
+  "authors": [
+    "kukaro <justkukaro@naver.com>"
+  ],
+  "description": "my-bootstrap",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

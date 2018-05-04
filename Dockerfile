@@ -1,14 +1,20 @@
 # install ubuntu
 FROM ubuntu:16.04
 MAINTAINER kukaro <justkukaro@naver.com>
-RUN apt-get -y update
-RUN apt-get -y upgrade
+RUN apt-get -y update && apt-get -y upgrade
 
 # install php
 RUN apt-get -y install php
 
 # install apache2
 RUN apt-get -y install apache2
+
+# install npm
+RUN apt-get -y install nodejs 
+RUN apt-get -y install npm
+
+# install bower
+RUN npm install -g bower
 
 # Enalbe apache mods
 RUN apt install libapache2-mod-php7.0 libapache2-mod-php
