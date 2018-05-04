@@ -9,9 +9,14 @@ RUN apt-get -y install php
 # install apache2
 RUN apt-get -y install apache2
 
+# install git
+RUN apt-get -y install git
+
 # install npm
 RUN apt-get -y install nodejs 
 RUN apt-get -y install npm
+RUN apt-get install -y build-essential
+RUN cp /usr/bin/nodejs /usr/bin/node
 
 # install bower
 RUN npm install -g bower
@@ -31,8 +36,13 @@ ADD CI /var/www/html/
 ADD 000-default.conf /etc/apache2/sites-available/
 ADD apache2.conf /etc/apache2/
 ADD servername.conf /etc/apache2/conf-available/
+ADD bower.json /var/www/html
+ADD .bowerrc /var/www/html
 
 # Restart apache
 RUN a2enconf servername
+
+# Bower install
+RUN cd /var/www/html/ && bower install --allow-root
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND

@@ -1,3 +1,7 @@
+#etc
+nodejs와 node는 같은데 이미지 우분투에서는 node가 없길래 nodejs를 복사해서 붙혀줬음
+
+#docker
 docker ps
 -docker에서 현재 작업중인 이미지 실행
 
@@ -7,4 +11,4 @@ docker stop <id입력하는데 최소 2개 입력>
 docker build -t <app이름> .
 -docker에서 Dockerfile을 실행시키는데 이름이 app이 된다.
 
-docker run -d -p 80:80 
+docker run -d -p 80:80 app 
