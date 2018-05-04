@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="CI/application/views/public/bootstrap/dist/css/bootstrap.css" type="text/css">
     <script src="CI/application/views/public/jquery/dist/jquery.js"></script>
     <script src="CI/application/views/public/bootstrap/dist/js/bootstrap.js"></script>
 </head>
