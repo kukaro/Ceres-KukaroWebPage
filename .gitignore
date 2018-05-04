@@ -48,3 +48,7 @@ composer.phar
 
 ## nodejs Files
 node_modules
+
+##bower file
+public
+bower_components
