@@ -31,6 +31,7 @@ EXPOSE 80
 
 # Import php project
 ADD CI /var/www/html/
+RUN rm /var/www/html/index.html
 
 # Set configulation
 ADD 000-default.conf /etc/apache2/sites-available/
