@@ -12,3 +12,7 @@ docker build -t <app이름> .
 -docker에서 Dockerfile을 실행시키는데 이름이 app이 된다.
 
 docker run -d -p 80:80 app 
+
+아래의 명령어로 DB초기화
+sudo mysql -h <호스트주소> --force -uroot -proot < docs/sql/createDb.sql
+sudo mysql -h <호스트주소> --force -uroot -proot < docs/sql/createTable.sql
