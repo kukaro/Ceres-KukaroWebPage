@@ -52,3 +52,6 @@ node_modules
 ##bower file
 public
 bower_components
+
+## private file
+database.php
