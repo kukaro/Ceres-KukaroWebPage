@@ -54,4 +54,4 @@ public
 bower_components
 
 ## private file
-database.php
+CI/application/config/database.php
