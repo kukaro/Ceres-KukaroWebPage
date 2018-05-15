@@ -11,12 +11,14 @@ class Api extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('proper_case');
         $this->load->model('Nav_List_Model');
     }
 
     public function index()
     {
         $db_name = $this->uri->segment(3);
+        echo to_proper_case('hi hello');
         $nav_list = $this->Nav_List_Model->get_all_entry();
         echo json_encode($nav_list);
     }
