@@ -8,9 +8,16 @@
 
 class Api extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Nav_List_Model');
+    }
+
     public function index()
     {
-        echo $this->uri->segment(3).'<br>';
-        echo 'this is api';
+        $db_name = $this->uri->segment(3);
+        $nav_list = $this->Nav_List_Model->get_all_entry();
+        echo print_r($nav_list);
     }
 }

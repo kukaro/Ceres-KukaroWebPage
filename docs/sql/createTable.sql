@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS nav_list (
   internal_name VARCHAR(100) NOT NULL,
   is_root       BOOLEAN      NOT NULL,
   owner         VARCHAR(30)  NOT NULL,
-  is_hidden     BOOLEAN DEFAULT NULL
+  is_hidden     BOOLEAN      NOT NULL,
+  sign_state    SET ('in','out') DEFAULT NULL
 );
 
 ALTER TABLE nav_list

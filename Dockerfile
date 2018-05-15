@@ -5,6 +5,7 @@ RUN apt-get -y update && apt-get -y upgrade
 
 # install php
 RUN apt-get -y install php
+RUN apt-get -y install php7.0-mysql
 
 # install apache2
 RUN apt-get -y install apache2
@@ -45,13 +46,5 @@ RUN a2enconf servername
 
 # Bower install
 RUN cd /var/www/html/ && bower install --allow-root
-
-# Mariadb install and setting
-#ADD docs docs
-#RUN apt-get -y install mariadb-server mariadb-client
-#CMD service /usr/bin/mysql start
-#EXPOSE 3306
-#RUN mysql --force -uroot < ./docs/sql/createDb.sql
-#RUN mysql --force -uroot < ./docs/sql/createTable.sql
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
