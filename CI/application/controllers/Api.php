@@ -18,6 +18,6 @@ class Api extends CI_Controller
     {
         $db_name = $this->uri->segment(3);
         $nav_list = $this->Nav_List_Model->get_all_entry();
-        echo print_r($nav_list);
+        echo json_encode($nav_list);
     }
 }
