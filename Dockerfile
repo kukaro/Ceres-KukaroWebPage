@@ -53,5 +53,5 @@ RUN cd /var/www/html/ && bower install --allow-root
 #EXPOSE 3306
 #RUN mysql --force -uroot < ./docs/sql/createDb.sql
 #RUN mysql --force -uroot < ./docs/sql/createTable.sql
-#
-#CMD /usr/sbin/apache2ctl -D FOREGROUND
+
+CMD /usr/sbin/apache2ctl -D FOREGROUND
