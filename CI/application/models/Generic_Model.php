@@ -6,14 +6,14 @@
  * Time: AM 1:37
  */
 
-class Nav_List_Model extends CI_Model
+class Generic_Model extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
-    public function get_all_entry(){
-        $query = $this->db->get('nav_list');
+    public function get_all_entry($table_name){
+        $query = $this->db->get($table_name);
         return $query->result_array();
     }
 }
