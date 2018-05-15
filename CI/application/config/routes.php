@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route[''] = 'main';
 $route['ujin'] = 'ujin';
+$route['api/db/:any'] = 'api';
