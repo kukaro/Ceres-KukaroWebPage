@@ -46,4 +46,12 @@ RUN a2enconf servername
 # Bower install
 RUN cd /var/www/html/ && bower install --allow-root
 
-CMD /usr/sbin/apache2ctl -D FOREGROUND
+# Mariadb install and setting
+#ADD docs docs
+#RUN apt-get -y install mariadb-server mariadb-client
+#CMD service /usr/bin/mysql start
+#EXPOSE 3306
+#RUN mysql --force -uroot < ./docs/sql/createDb.sql
+#RUN mysql --force -uroot < ./docs/sql/createTable.sql
+#
+#CMD /usr/sbin/apache2ctl -D FOREGROUND
